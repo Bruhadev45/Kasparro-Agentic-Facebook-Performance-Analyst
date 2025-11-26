@@ -1,0 +1,40 @@
+# Kasparro Agentic FB Analyst Configuration
+
+# Python version
+python: "3.10"
+
+# Random seed for reproducibility
+random_seed: 42
+
+# Data paths
+data:
+  full_csv: "data/synthetic_fb_ads_undergarments.csv"
+  sample_csv: "data/sample_fb_ads.csv"
+  use_sample_data: false
+
+# Agent thresholds
+thresholds:
+  confidence_min: 0.6
+  low_ctr_threshold: 0.015
+  low_roas_threshold: 2.0
+  significant_change_pct: 0.15
+
+# LLM Configuration (using OpenAI GPT-4o for speed + accuracy balance)
+llm:
+  model: "gpt-4o"
+  temperature: 0.3
+  max_tokens: 2500
+
+# Output paths
+outputs:
+  reports_dir: "reports"
+  logs_dir: "logs"
+  insights_file: "reports/insights.json"
+  creatives_file: "reports/creatives.json"
+  report_file: "reports/report.md"
+
+# Logging
+logging:
+  level: "INFO"
+  format: "json"
+  enable_langfuse: false
